@@ -1,0 +1,53 @@
+---
+import { projects } from "./ProjectData"
+import { Badge } from "@/components/ui/Badge"
+import { Button } from "@/components/ui/button"
+import * as Icons from "@/components/icons"
+---
+
+<section id="projects" class="py-24 px-6 max-w-6xl mx-auto">
+  <h2 class="text-5xl font-heading mb-20 text-center">
+    <span class="border-2 border-main px-2">Proyectos</span> Destacados
+  </h2>
+
+  <div class="flex flex-col gap-24">
+    {projects.map(project => (
+      <article class="flex flex-col lg:flex-row items-center gap-10">
+        <div class="flex-1">
+          <h3 class="text-3xl font-bold mb-4">{project.title}</h3>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            {project.stack.map(tech => {
+              const Icon = (Icons as { [key: string]: any })[tech.icon]
+              return <Badge icon={Icon} label={tech.name} />
+            })}
+          </div>
+          
+          <p class="mb-4 text-base text-muted-foreground">{project.description}</p>
+
+          <div class="flex flex-wrap gap-4">
+            {project.repo && (
+              <a href={project.repo} target="_blank" rel="noopener noreferrer">
+                <Button variant="neutral">Repositorio</Button>
+              </a>
+            )}
+            {project.preview && (
+              <a href={project.preview} target="_blank" rel="noopener noreferrer">
+                <Button variant="neutral">Demo</Button>
+              </a>
+            )}
+          </div>
+        </div>
+
+        <!-- Imagen derecha -->
+        <div class="flex-1">
+          <img
+            src={project.image}
+            alt={project.title}
+            class="rounded-lg shadow-lg border border-border hover:translate-y-[-4px] transition-transform duration-300"
+          />
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,31 @@
+---
+// Hero.astro
+import { Button } from '@/components/ui/button'
+---
+
+<section class="pt-32 relative w-full min-h-[80vh] flex items-center justify-center text-center px-4 sm:px-6 lg:px-8">
+  <div class="max-w-3xl mx-auto space-y-8">
+    <!-- Título -->
+    <h1 class="text-5xl md:text-9xl font-heading text-foreground">
+      Hola,<br />
+      Soy Fabrizzio<br />
+      Zambrano
+    </h1>
+
+    <!-- Descripción -->
+    <p class="text-base sm:text-lg md:text-xl text-foreground/80 font-medium leading-relaxed">
+      <strong class="text-foreground">Desarrollador de Software</strong> especializado en crear interfaces modernas, claras y centradas en el usuario. Apasionado por construir experiencias digitales eficientes y modernas.
+    </p>
+
+    <!-- Botones -->
+    <div class="mt-6 flex flex-wrap justify-center gap-4">
+      <a href="/cv.pdf" download>
+        <Button variant="neutral">Currículum</Button>
+      </a>
+      <a href="#contacto">
+        <Button variant="neutral">Contáctame</Button>
+      </a>
+    </div>
+  </div>
+</section>
+

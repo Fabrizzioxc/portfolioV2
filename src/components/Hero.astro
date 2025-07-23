@@ -1,12 +1,20 @@
 ---
-// Hero.astro
 import { Button } from '@/components/ui/button'
 ---
+
+<style>
+  @font-face {
+    font-family: 'Recoleta';
+    src: url('/assets/fonts/Recoleta/Recoleta-Bold.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+</style>
 
 <section class="pt-32 relative w-full min-h-[80vh] flex items-center justify-center text-center px-4 sm:px-6 lg:px-8">
   <div class="max-w-3xl mx-auto space-y-8">
     <!-- Título -->
-    <h1 class="text-5xl md:text-9xl font-heading text-foreground">
+    <h1 class="text-5xl md:text-9xl text-foreground" style="font-family: 'Recoleta', serif;">
       Hola,<br />
       Soy Fabrizzio<br />
       Zambrano
@@ -28,4 +36,3 @@ import { Button } from '@/components/ui/button'
     </div>
   </div>
 </section>
-

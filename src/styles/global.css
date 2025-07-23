@@ -71,16 +71,8 @@
 
   h1, h2, h3, h4, h5, h6{
     @apply font-heading;
-    font-family: 'Recoleta';
-  src: url('../assets/fonts/Recoleta/Recoleta-Bold.ttf') format('opentype');
   font-weight: normal;
   font-style: normal;
   }
 }
 
-@font-face {
-  font-family: 'Recoleta';
-  src: url('../assets/fonts/Recoleta/Recoleta-Bold.ttf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}

@@ -35,93 +35,93 @@ export default function Navbar() {
   }, [isOpen]);
 
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full bg-[#000615]/70 backdrop-blur-md border-b border-[#27324D] text-[#DDE3F0]">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        {/* Logo */}
-        <a href="#" className="flex items-center font-bold text-2xl transition-colors">
-          <DeveloperIcon className="w-6 h-6 mr-2" />
-          <span className="mr-2">Fabrizzio</span>
-        </a>
+    <>
+  {/* Navbar principal */}
+  <nav className="fixed top-0 left-0 z-50 w-full bg-[#000615]/70 backdrop-blur-md border-b border-[#27324D] text-[#DDE3F0]">
+    <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      {/* Logo */}
+      <a href="#" className="flex items-center font-bold text-2xl transition-colors">
+        <DeveloperIcon className="w-6 h-6 mr-2" />
+        <span className="mr-2">Fabrizzio</span>
+      </a>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-8 text-lg font-medium">
-          <a href="#experience" className="hover:-translate-y-1 transition-transform">Experiencia</a>
-          <a href="#proyectos" className="hover:-translate-y-1 transition-transform">Proyectos</a>
-          <a href="#contacto" className="hover:-translate-y-1 transition-transform">Contacto</a>
-        </div>
-
-        {/* Desktop Buttons */}
-        <div className="hidden md:flex space-x-4">
-          <a
-            href="https://www.linkedin.com/in/fabrizzio-zambrano-602678334/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn de Fabrizzio"
-          >
-            <Button>
-              <LinkedIn className="w-6 h-6" />
-              <span className="sr-only">LinkedIn</span>
-            </Button>
-          </a>
-          <a
-            href="https://github.com/Fabrizzioxc"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub de Fabrizzio"
-          >
-            <Button>
-              <GitHub className="w-6 h-6" />
-              <span className="sr-only">GitHub</span>
-            </Button>
-          </a>
-        </div>
-
-        {/* Mobile Menu Toggle */}
-        <div className="md:hidden">
-          <button onClick={handleToggle}>
-            {isOpen ? <X size={32} strokeWidth={3} /> : <Menu size={32} strokeWidth={3} />}
-          </button>
-        </div>
+      {/* Desktop Navigation */}
+      <div className="hidden md:flex space-x-8 text-lg font-medium">
+        <a href="#experience" className="hover:-translate-y-1 transition-transform">Experiencia</a>
+        <a href="#proyectos" className="hover:-translate-y-1 transition-transform">Proyectos</a>
+        <a href="#contacto" className="hover:-translate-y-1 transition-transform">Contacto</a>
       </div>
 
-      {/* Mobile Sidebar */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            ref={navMenuRef}
-            initial={{ translateX: "100%" }}
-            animate={{ translateX: "0%" }}
-            exit={{ translateX: "100%" }}
-            transition={{ duration: 0.3, type: "tween", ease: "easeInOut" }}
-            className="fixed top-0 right-0 h-full w-64 bg-[#000615] text-[#DDE3F0] border-l border-[#27324D] p-6 flex flex-col z-50"
-          >
-            <div className="flex justify-end mb-4">
-              <button onClick={() => setIsOpen(false)} className="p-2">
-                <X size={32} strokeWidth={3} />
-              </button>
-            </div>
+      {/* Desktop Buttons */}
+      <div className="hidden md:flex space-x-4">
+        <a
+          href="https://www.linkedin.com/in/fabrizzio-zambrano-602678334/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button variant="neutral">
+            <LinkedIn className="w-5 h-5" />
+          </Button>
+        </a>
+        <a
+          href="https://github.com/Fabrizzioxc"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button variant="neutral">
+            <GitHub className="w-5 h-5" />
+          </Button>
+        </a>
+      </div>
 
-            <div className="flex flex-col space-y-6 text-lg font-medium">
-              <a href="#experience" onClick={() => setIsOpen(false)}>Experiencia</a>
-              <a href="#proyectos" onClick={() => setIsOpen(false)}>Proyectos</a>
-              <a href="#contacto" onClick={() => setIsOpen(false)}>Contacto</a>
-            </div>
+      {/* Mobile Toggle */}
+      <div className="md:hidden">
+        <button onClick={handleToggle}>
+          {isOpen ? <X size={32} strokeWidth={3} /> : <Menu size={32} strokeWidth={3} />}
+        </button>
+      </div>
+    </div>
+  </nav>
 
-            <div className="flex flex-col space-y-4 mt-6">
-              <a href="https://www.linkedin.com/in/fabrizzio-zambrano-602678334/" target="_blank" rel="noopener noreferrer">
-                <Button variant="noShadow">
-                  <LinkedIn className="w-5 h-5" />
-                </Button>
-              </a>
-              <a href="https://github.com/Fabrizzioxc" target="_blank" rel="noopener noreferrer">
-                <Button variant="neutral">
-                  <GitHub className="w-5 h-5" />
-                </Button>
-              </a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
+  {/* Mobile Sidebar - fuera del nav */}
+  <AnimatePresence>
+    {isOpen && (
+      <motion.div
+        ref={navMenuRef}
+        initial={{ translateX: "100%" }}
+        animate={{ translateX: "0%" }}
+        exit={{ translateX: "100%" }}
+        transition={{ duration: 0.3, type: "tween", ease: "easeInOut" }}
+        className="fixed top-0 right-0 h-full w-64 bg-[#000615] text-[#DDE3F0] border-l border-[#27324D] p-6 flex flex-col z-50"
+      >
+        <div className="flex justify-end mb-4">
+          <button onClick={() => setIsOpen(false)} className="p-2">
+            <X size={32} strokeWidth={3} />
+          </button>
+        </div>
+
+        <div className="flex flex-col space-y-6 text-lg font-medium">
+          <a href="#experience" onClick={() => setIsOpen(false)}>Experiencia</a>
+          <a href="#proyectos" onClick={() => setIsOpen(false)}>Proyectos</a>
+          <a href="#contacto" onClick={() => setIsOpen(false)}>Contacto</a>
+        </div>
+
+        <div className="flex flex-col space-y-4 mt-6">
+          <a href="https://www.linkedin.com/in/fabrizzio-zambrano-602678334/" target="_blank" rel="noopener noreferrer">
+            <Button variant="neutral">
+              <LinkedIn className="w-5 h-5" />
+            </Button>
+          </a>
+          <a href="https://github.com/Fabrizzioxc" target="_blank" rel="noopener noreferrer">
+            <Button variant="neutral">
+              <GitHub className="w-5 h-5" />
+            </Button>
+          </a>
+        </div>
+      </motion.div>
+    )}
+  </AnimatePresence>
+</>
+
   );
 }

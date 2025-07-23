@@ -1,0 +1,24 @@
+---
+import { Button } from "@/components/ui/button"
+import { experiences } from "./ExperienceData"
+import type { Experience } from "./ExperienceData"  
+---
+
+<section id="experience" class="py-24 px-6 max-w-4xl mx-auto">
+  <h2 class="text-5xl font-heading mb-16 text-center">
+    <span class="border-2 border-main px-2">Experiencia</span> Laboral
+  </h2>
+
+  <ol class="border-s-2 border-border">
+    {experiences.map((exp: Experience) => (
+      <li class="relative mb-16 ms-6">
+        <div class="absolute w-4 h-4 bg-main border-2 border-border rounded-full -start-8 top-1.5"></div>
+        <time class="text-sm text-muted-foreground">{exp.date}</time>
+        <h3 class="text-4xl font-semibold mt-3">{exp.title}</h3>
+        <p class="text-base text-muted-foreground mb-3">{exp.company}</p>
+        <p class="text-base text-muted-foreground mb-5 leading-relaxed">{exp.description}</p>
+        <Button variant="neutral">{exp.button}</Button>
+      </li>
+    ))}
+  </ol>
+</section>

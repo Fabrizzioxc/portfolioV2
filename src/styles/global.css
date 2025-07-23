@@ -4,21 +4,22 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(94.27% 0.0268 242.57);
-  --secondary-background: oklch(100% 0 0);
-  --foreground: oklch(0% 0 0);
-  --main-foreground: oklch(0% 0 0);
-  --main: oklch(66.9% 0.18368 248.8066);
-  --border: oklch(0% 0 0);
-  --ring: oklch(0% 0 0);
-  --overlay: oklch(0% 0 0 / 0.8);
+  --background: #000615;
+  --secondary-background: #0c0f1a; /* para variantes si necesitas */
+  --foreground: #DDE3F0;
+  --main: #DDE3F0;
+  --main-foreground: #000615;
+  --border: #DDE3F0;
+  --ring: #27324D;
+  --overlay: #27324DCC;
   --shadow: 4px 4px 0px 0px var(--border);
-  --chart-1: #0099FF;
-  --chart-2: #FF4D50;
-  --chart-3: #FACC00;
-  --chart-4: #05E17A;
-  --chart-5: #7A83FF;
-  --chart-active-dot: #000;
+
+  --chart-1: #DDE3F0;
+  --chart-2: #27324D;
+  --chart-3: #DDE3F0;
+  --chart-4: #27324D;
+  --chart-5: #DDE3F0;
+  --chart-active-dot: #DDE3F0;
 }
 
 .dark {
@@ -70,5 +71,16 @@
 
   h1, h2, h3, h4, h5, h6{
     @apply font-heading;
+    font-family: 'Recoleta';
+  src: url('../assets/fonts/Recoleta/Recoleta-Bold.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
   }
+}
+
+@font-face {
+  font-family: 'Recoleta';
+  src: url('../assets/fonts/Recoleta/Recoleta-Bold.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }

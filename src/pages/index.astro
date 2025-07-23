@@ -1,12 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { Button } from '@/components/ui/button'
+// src/pages/index.astro
+import Layout from "@/layouts/Layout.astro"
+import ToasterDemo from "@/components/ToasterDemo"
 ---
 
 <Layout>
-<h1 class="text-3xl font-bold underline text-red-500">
-  Astro con Tailwind v4
-</h1>
-
-<Button>prueba boton</Button>
+  <ToasterDemo client:load />
 </Layout>

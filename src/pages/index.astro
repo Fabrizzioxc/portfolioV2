@@ -1,9 +1,17 @@
 ---
 // src/pages/index.astro
 import Layout from "@/layouts/Layout.astro"
-import ToasterDemo from "@/components/ToasterDemo"
+import Experience from "@/components/Experience.astro"
+import Hero from "@/components/Hero.astro"
+import Proyects from "@/components/Proyects.astro"
+import AboutMe from "@/components/AboutMe.astro"
+import Contact from "@/components/Contact.astro"
 ---
 
 <Layout>
-  <ToasterDemo client:load />
+  <Hero />
+  <Experience />
+  <Proyects />
+  <AboutMe />
+  <Contact />
 </Layout>

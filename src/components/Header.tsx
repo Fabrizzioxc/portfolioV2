@@ -49,6 +49,7 @@ export default function Navbar() {
       <div className="hidden md:flex space-x-8 text-lg font-medium">
         <a href="#experience" className="hover:-translate-y-1 transition-transform">Experiencia</a>
         <a href="#proyectos" className="hover:-translate-y-1 transition-transform">Proyectos</a>
+        <a href="#sobremi" className="hover:-translate-y-1 transition-transform">Sobre mí</a>
         <a href="#contacto" className="hover:-translate-y-1 transition-transform">Contacto</a>
       </div>
 

@@ -5,16 +5,18 @@ import { Button } from "@/components/ui/button"
 import * as Icons from "@/components/icons"
 ---
 
-<section id="proyectos" class="py-8 px-6 max-w-6xl mx-auto">
-  <h2 class="text-5xl font-heading pt-20 pb-32 text-center pt-24">
+<section id="proyectos" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto scroll-mt-16">
+  <!-- Título -->
+  <h2 class="text-4xl sm:text-5xl lg:text-6xl font-heading text-center leading-tight mb-24">
     <span class="border-2 border-main px-2">Proyectos</span> Destacados
   </h2>
 
   <div class="flex flex-col gap-24">
     {projects.map(project => (
-      <article class="flex flex-col lg:flex-row items-center gap-10">
-        <div class="flex-1">
-          <h3 class="text-3xl font-bold mb-4">{project.title}</h3>
+      <article class="flex flex-col-reverse lg:flex-row items-center gap-10">
+        {/* Texto e info */}
+        <div class="w-full lg:w-1/2">
+          <h3 class="text-2xl sm:text-3xl font-bold mb-4">{project.title}</h3>
 
           <div class="flex flex-wrap gap-2 mb-6">
             {project.stack.map(tech => {
@@ -22,8 +24,10 @@ import * as Icons from "@/components/icons"
               return <Badge icon={Icon} label={tech.name} />
             })}
           </div>
-          
-          <p class="mb-4 text-base text-muted-foreground">{project.description}</p>
+
+          <p class="text-base text-muted-foreground mb-6 leading-relaxed">
+            {project.description}
+          </p>
 
           <div class="flex flex-wrap gap-4">
             {project.repo && (
@@ -39,12 +43,12 @@ import * as Icons from "@/components/icons"
           </div>
         </div>
 
-        <!-- Imagen derecha -->
-        <div class="flex-1">
+        {/* Imagen */}
+        <div class="w-full lg:w-1/2">
           <img
             src={project.image}
             alt={project.title}
-            class="rounded-lg shadow-lg border border-border hover:translate-y-[-4px] transition-transform duration-300"
+            class="w-full h-auto rounded-lg shadow-lg border border-border hover:-translate-y-1 transition-transform duration-300"
           />
         </div>
       </article>

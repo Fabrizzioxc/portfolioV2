@@ -1,5 +1,6 @@
 ---
 import EmailCopy from "@/components/EmailCopy"
+import { Button } from "@/components/ui/button"
 ---
 
 <section
@@ -20,6 +21,19 @@ import EmailCopy from "@/components/EmailCopy"
     y colaboraciones. Puedes contactarme por correo o LinkedIn. ¡Estaré encantado de conversar contigo!
   </p>
 
-  <!-- Componente de copia de correo -->
+  <!-- Formulario de copia -->
   <EmailCopy client:load />
+
+  <!-- Botón LinkedIn -->
+  <div class="mt-12 flex justify-center">
+    <a
+      href="https://www.linkedin.com/in/fabrizzio-zambrano-602678334/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Button variant="default" size="xl">
+        LinkedIn
+      </Button>
+    </a>
+  </div>
 </section>

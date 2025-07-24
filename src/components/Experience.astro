@@ -1,22 +1,29 @@
 ---
 import { Button } from "@/components/ui/button"
 import { experiences } from "./ExperienceData"
-import type { Experience } from "./ExperienceData"  
+import type { Experience } from "./ExperienceData"
 ---
 
-<section id="experience" class="py-12 px-6 max-w-4xl mx-auto">
-  <h2 class="text-5xl font-heading pt-20 pb-32 text-center">
+<section
+  id="experience"
+  class="py-16 px-6 max-w-4xl mx-auto scroll-mt-16"
+>
+  <!-- Título -->
+  <h2
+    class="text-4xl sm:text-5xl lg:text-6xl font-heading text-center leading-tight mb-24"
+  >
     <span class="border-2 border-main px-2">Experiencia</span> Laboral
   </h2>
 
+  <!-- Línea de tiempo -->
   <ol class="border-s-2 border-border">
     {experiences.map((exp: Experience) => (
       <li class="relative mb-16 ms-6">
         <div class="absolute w-4 h-4 bg-main border-2 border-border rounded-full -start-8 top-1.5"></div>
         <time class="text-sm text-muted-foreground">{exp.date}</time>
-        <h3 class="text-4xl font-semibold mt-3">{exp.title}</h3>
-        <p class="text-base text-muted-foreground mb-3">{exp.company}</p>
-        <p class="text-base text-muted-foreground mb-5 leading-relaxed">{exp.description}</p>
+        <h3 class="text-2xl sm:text-3xl font-semibold mt-3">{exp.title}</h3>
+        <p class="text-base text-muted-foreground mb-2">{exp.company}</p>
+        <p class="text-base text-muted-foreground leading-relaxed mb-4">{exp.description}</p>
         <Button variant="neutral">{exp.button}</Button>
       </li>
     ))}

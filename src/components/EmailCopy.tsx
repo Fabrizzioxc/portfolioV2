@@ -10,7 +10,7 @@ export default function EmailCopy() {
   const handleCopy = () => {
     navigator.clipboard.writeText(email)
     toast("Correo copiado", {
-      description: "No dudes en escribirme, estaré encantado de conversar.",
+      description: "¡No dudes en escribirme, estaré encantado de conversar contigo!",
     })
   }
 

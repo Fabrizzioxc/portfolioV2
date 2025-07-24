@@ -3,32 +3,33 @@ import { GitHub, LinkedIn } from "@/components/icons"
 import { Button } from '@/components/ui/button'
 ---
 
-<footer class="border-t border-border mt-24 px-6 py-10 text-sm text-muted-foreground">
-  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+<footer class="mt-24 px-6 py-10 text-sm text-muted-foreground">
+  <div class="max-w-6xl mx-auto border-t border-[#27324D] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+    
     <p class="text-center md:text-left">
       © 2024 Fabrizzio Zambrano. Desarrollado con <strong>Astro</strong> y diseñado en <strong>Figma</strong>.
     </p>
     
     <div class="hidden md:flex space-x-4">
-        <a
-          href="https://www.linkedin.com/in/fabrizzio-zambrano-602678334/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button variant="neutral">
-            <LinkedIn className="w-5 h-5" />
-          </Button>
-        </a>
-        <a
-          href="https://github.com/Fabrizzioxc"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button variant="neutral">
-            <GitHub className="w-5 h-5" />
-          </Button>
-        </a>
-      </div>
+      <a
+        href="https://www.linkedin.com/in/fabrizzio-zambrano-602678334/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Button variant="neutral">
+          <LinkedIn className="w-5 h-5" />
+        </Button>
+      </a>
+      <a
+        href="https://github.com/Fabrizzioxc"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Button variant="neutral">
+          <GitHub className="w-5 h-5" />
+        </Button>
+      </a>
     </div>
+
   </div>
 </footer>

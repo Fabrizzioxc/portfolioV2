@@ -11,27 +11,30 @@ import { Button } from '@/components/ui/button'
   }
 </style>
 
-<section class="pt-32 relative w-full min-h-[80vh] flex items-center justify-center text-center px-4 sm:px-6 lg:px-8">
-  <div class="max-w-3xl mx-auto space-y-8">
-    <!-- Título -->
-    <h1 class="text-5xl md:text-9xl text-foreground" style="font-family: 'Recoleta', serif;">
-      Hola,<br />
-      Soy Fabrizzio<br />
-      Zambrano
+<section class="pt-42 relative w-full min-h-[80vh] flex items-center justify-center text-center px-4 sm:px-6 lg:px-8 pb-16">
+  <div class="max-w-4xl mx-auto space-y-6">
+    <!-- Hola -->
+    <p class="text-3xl md:text-7xl text-foreground" style="font-family: 'Recoleta', serif;">
+      Hola,
+    </p>
+
+    <!-- Soy Fabrizzio Zambrano -->
+    <h1 class="text-6xl md:text-9xl text-foreground leading-tight" style="font-family: 'Recoleta', serif;">
+      Soy Fabrizzio<br />Zambrano
     </h1>
 
     <!-- Descripción -->
-    <p class="text-base sm:text-lg md:text-xl text-foreground/80 font-medium leading-relaxed">
+    <p class="text-base sm:text-lg md:text-xl text-foreground/80 font-medium leading-relaxed pb-12">
       <strong class="text-foreground">Desarrollador de Software</strong> especializado en crear interfaces modernas, claras y centradas en el usuario. Apasionado por construir experiencias digitales eficientes y modernas.
     </p>
 
     <!-- Botones -->
     <div class="mt-6 flex flex-wrap justify-center gap-4">
       <a href="/cv.pdf" download>
-        <Button variant="neutral">Currículum</Button>
+        <Button variant="neutral" size="xl">Currículum</Button>
       </a>
       <a href="#contacto">
-        <Button variant="neutral">Contáctame</Button>
+        <Button variant="neutral" size="xl">Contáctame</Button>
       </a>
     </div>
   </div>

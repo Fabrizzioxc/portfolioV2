@@ -1,0 +1,27 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Button } from "@/components/ui/button";
+
+const title = "Página no encontrada";
+---
+
+<Layout {title}>
+  <section class="min-h-[80vh] flex flex-col items-center justify-center text-center px-6 bg-background text-foreground">
+    <h1 class="text-6xl sm:text-7xl md:text-8xl font-heading font-bold mb-6">
+      404
+    </h1>
+    <p class="text-lg sm:text-xl text-muted-foreground mb-16 max-w-xl">
+      La página que buscas no existe o fue movida.  
+      ¡Regresa al inicio para seguir explorando!
+    </p>
+    <a href="/" aria-label="Volver al inicio">
+      <Button
+        variant="neutral"
+        size="xl"
+        className="shadow-[4px_4px_0_0_var(--border)] hover:-translate-y-1 transition-transform"
+      >
+        Ir al inicio
+      </Button>
+    </a>
+  </section>
+</Layout>

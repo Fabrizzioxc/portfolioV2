@@ -2,7 +2,6 @@
 import { projects } from "./ProjectData";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/button";
-import * as Icons from "@/components/icons";
 import GitHub from "@/components/icons/GitHub";
 import LinkIcon from "@/components/icons/LinkIcon";
 ---
@@ -11,12 +10,10 @@ import LinkIcon from "@/components/icons/LinkIcon";
   id="proyectos"
   class="py-16 px-6 sm:px-6 lg:px-8 max-w-6xl mx-auto scroll-mt-16 justify-items-center"
 >
-  <!-- Título -->
   <h2 class="text-4xl sm:text-5xl lg:text-6xl font-heading text-center leading-tight mb-24">
     <span class="border-2 border-main px-3">Proyectos</span>
   </h2>
 
-  <!-- Tarjetas -->
   <div class="grid gap-12 sm:grid-cols-2 justify-items-center">
     {projects.map(project => (
       <article class="relative bg-background border border-border p-6 sm:p-8 flex flex-col justify-between max-w-xs sm:max-w-full w-full mx-auto">
@@ -25,7 +22,7 @@ import LinkIcon from "@/components/icons/LinkIcon";
 
           <div class="flex flex-wrap gap-3">
             {project.stack.map(tech => {
-              const Icon = (Icons as { [key: string]: any })[tech.icon];
+              const Icon = tech.icon;
               return <Badge icon={Icon} label={tech.name} />;
             })}
           </div>
@@ -37,17 +34,27 @@ import LinkIcon from "@/components/icons/LinkIcon";
 
         <div class="flex gap-4 mt-8 flex-wrap">
           {project.repo && (
-            <a href={project.repo} target="_blank" rel="noopener noreferrer">
+            <a
+              href={project.repo}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Ver el repositorio en GitHub del proyecto ${project.title}`}
+            >
               <Button variant="neutral" size="lg" className="flex items-center gap-2">
-                <GitHub className="w-5 h-5" />
+                <GitHub className="w-5 h-5" aria-hidden="true" />
                 Repositorio
               </Button>
             </a>
           )}
           {project.preview && (
-            <a href={project.preview} target="_blank" rel="noopener noreferrer">
+            <a
+              href={project.preview}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Ver la vista previa del proyecto ${project.title}`}
+            >
               <Button variant="neutral" size="lg" className="flex items-center gap-2">
-                <LinkIcon className="w-5 h-5" />
+                <LinkIcon className="w-5 h-5" aria-hidden="true" />
                 Preview
               </Button>
             </a>

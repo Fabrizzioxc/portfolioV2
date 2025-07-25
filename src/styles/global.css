@@ -79,6 +79,10 @@
     scroll-behavior: smooth;
   }
 
+  .font-mono-dm {
+    font-family: 'DM Mono', monospace;
+  }
+
   @font-face {
     font-family: 'Recoleta';
     src: url('/assets/fonts/Recoleta/Recoleta-Bold.ttf') format('opentype');

@@ -1,52 +1,49 @@
-# Astro Starter Kit: Basics
+# 🌐 Portafolio Personal - Fabrizzio Zambrano
+ 
+Este proyecto está diseñado para demostrar mis **habilidades y proyectos como Desarrollador de Software**, utilizando tecnologías modernas para ofrecer una experiencia visual atractiva y optimizada.
 
-```sh
-npm create astro@latest -- --template basics
-```
+## 🖼 **Preview**
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+![Preview del Portafolio](./public/assets/preview.png)  
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+---
 
-## 🚀 Project Structure
+## 🚀 **Tech Stack**
+- **[Astro](https://astro.build/)** - Framework estático rápido y flexible.
+- **[React](https://react.dev/)** - Componentes interactivos y reutilizables.
+- **[Tailwind CSS](https://tailwindcss.com/)** - Estilos utilitarios con un diseño **Neobrutalism**.
+- **[shadcn/ui](https://ui.shadcn.com/)** - Componentes accesibles y personalizables.
+- **[GSAP](https://gsap.com/)** - Animaciones dinámicas y suaves para el **Hero**.
+- **[Vercel](https://vercel.com/)** - Despliegue rápido y confiable.
 
-Inside of your Astro project, you'll see the following folders and files:
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+---
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 📂 **Secciones Principales**
+1. **Hero** - Presentación principal con animación GSAP.  
+2. **Experiencia** - Línea de tiempo con mis experiencias laborales.  
+3. **Proyectos** - Galería con mis proyectos destacados.  
+4. **Sobre Mí** - Una breve introducción profesional.  
+5. **Contacto** - Formas de contacto y enlaces a redes sociales.
 
-## 🧞 Commands
+---
 
-All commands are run from the root of the project, from a terminal:
+## 🌎 **Deploy**
+El portafolio está desplegado en **Vercel**:  
+[🔗 Visitar el Portafolio](https://portfolio-fabrizziozambrano.vercel.app)
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+---
 
-## 👀 Want to learn more?
+## ⚡ **Instalación y Uso**
+Si quieres correr el proyecto localmente:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```bash
+# Clonar el repositorio
+git clone https://github.com/Fabrizzioxc/portfolioV2.git
+
+# Instalar dependencias
+npm install
+
+# Ejecutar en modo desarrollo
+npm run dev

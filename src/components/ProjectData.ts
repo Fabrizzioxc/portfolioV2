@@ -13,7 +13,7 @@ export const projects: Project[] = [
   {
     title: "Inventario Web - Matrioska",
     description:
-      "Aplicación web desarrollada con React, Express y PostgreSQL para gestionar el inventario interno de Matrioska. Incluye funcionalidades CRUD, filtros avanzados y exportación de datos, con una interfaz moderna y fluida adaptada a dispositivos móviles.",
+      "Aplicación para la gestión interna de inventarios con funcionalidades CRUD, filtros avanzados y exportación de datos. Presenta una interfaz moderna, fluida y optimizada para dispositivos móviles.",
     stack: [
       { icon: "ReactIcon", name: "React" },
       { icon: "ExpressIcon", name: "Express" },
@@ -24,9 +24,9 @@ export const projects: Project[] = [
     image: "/images/matrioska.png",
   },
   {
-    title: "Sitio Web Corporativo - JYJ Servicios Generales S.A.C",
+    title: "Sitio Web Corporativo - JYJ S.A.C",
     description:
-      "Sitio web desarrollado con Astro, Tailwind CSS y Preact, diseñado previamente en Figma. El enfoque estuvo en la velocidad de carga, el SEO técnico y una experiencia de usuario limpia, optimizada para diferentes dispositivos. Representa la presencia digital de la empresa con un diseño moderno y profesional.",
+      "Sitio web corporativo enfocado en velocidad de carga, SEO técnico y diseño responsive. Ofrece una experiencia de usuario clara y profesional, fortaleciendo la presencia digital de la empresa.",
     stack: [
       { icon: "AstroIcon", name: "Astro" },
       { icon: "TailwindCSSIcon", name: "Tailwind CSS" },

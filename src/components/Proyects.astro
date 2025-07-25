@@ -1,8 +1,10 @@
 ---
-import { projects } from "./ProjectData"
-import { Badge } from "@/components/ui/Badge"
-import { Button } from "@/components/ui/button"
-import * as Icons from "@/components/icons"
+import { projects } from "./ProjectData";
+import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/button";
+import * as Icons from "@/components/icons";
+import GitHub from "@/components/icons/GitHub";
+import LinkIcon from "@/components/icons/LinkIcon";
 ---
 
 <section id="proyectos" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto scroll-mt-16 justify-items-center">
@@ -21,8 +23,8 @@ import * as Icons from "@/components/icons"
 
           <div class="flex flex-wrap gap-3">
             {project.stack.map(tech => {
-              const Icon = (Icons as { [key: string]: any })[tech.icon]
-              return <Badge icon={Icon} label={tech.name} />
+              const Icon = (Icons as { [key: string]: any })[tech.icon];
+              return <Badge icon={Icon} label={tech.name} />;
             })}
           </div>
 
@@ -31,16 +33,23 @@ import * as Icons from "@/components/icons"
           </p>
         </div>
 
-        
         <div class="flex gap-4 mt-8">
-          
+          {project.repo && (
             <a href={project.repo} target="_blank" rel="noopener noreferrer">
-              <Button variant="neutral" size="lg">Repositorio</Button>
+              <Button variant="neutral" size="lg" className="flex items-center gap-2">
+                <GitHub className="w-5 h-5" />
+                Repositorio
+              </Button>
             </a>
+          )}
+          {project.preview && (
             <a href={project.preview} target="_blank" rel="noopener noreferrer">
-              <Button variant="neutral" size="lg">Preview</Button>
+              <Button variant="neutral" size="lg" className="flex items-center gap-2">
+                <LinkIcon className="w-5 h-5" />
+                Preview
+              </Button>
             </a>
-          
+          )}
         </div>
       </article>
     ))}

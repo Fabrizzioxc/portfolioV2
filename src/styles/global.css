@@ -65,6 +65,15 @@
 }
   
 @layer base {
+
+  @font-face {
+    font-family: 'Inter Variable';
+    font-display: block; /* Espera a cargar Inter antes de mostrar texto */
+    font-style: normal;
+    font-weight: 100 900;
+    src: local('Inter Variable'); /* usa la inyección del paquete npm */
+  }
+  
   body {
     @apply text-foreground font-base bg-background;
     font-family: 'Inter Variable', sans-serif;

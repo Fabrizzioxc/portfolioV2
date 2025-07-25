@@ -20,7 +20,7 @@ import type { Experience } from "./ExperienceData"
     {experiences.map((exp: Experience) => (
       <li class="relative mb-16 ms-6">
         <div class="absolute w-4 h-4 bg-main border-2 border-border rounded-full -start-8 top-1.5"></div>
-        <time class="text-sm text-muted-foreground font-light">{exp.date}</time>
+        <time class="text-sm text-muted-foreground font-light font-mono-dm">{exp.date}</time>
         <h3 class="text-2xl sm:text-3xl mt-3 font-bold">{exp.title}</h3>
         <p class="text-lg font-normal text-muted-foreground mb-4">{exp.company}</p>
         <p class="text-base md:text-lg font-light text-muted-foreground leading-relaxed mb-6">{exp.description}</p>

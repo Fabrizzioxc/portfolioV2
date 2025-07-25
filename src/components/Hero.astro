@@ -1,22 +1,20 @@
 ---
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui/button';
+import HeroAnimation from '@/components/HeroAnimation';
 ---
 
 <section class="pt-42 pb-24 relative w-full min-h-[80vh] flex items-center justify-center text-center px-4 sm:px-6 lg:px-8">
   <div class="max-w-4xl mx-auto space-y-6">
-    <!-- Título principal -->
-    <h1 class="text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-foreground leading-tight font-heading" style="font-family: 'Recoleta'">
+    <h1 class="h1hero text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-foreground leading-tight font-heading" style="font-family: 'Recoleta'">
       <strong class="block text-3xl sm:text-4xl md:text-7xl text-foreground">Hola,</strong>
       Soy Fabrizzio<br />Zambrano
     </h1>
 
-    <!-- Descripción -->
-    <p class="text-base sm:text-lg md:text-xl text-foreground/80 font-medium leading-relaxed pb-12">
+    <p class="hero-desc text-base sm:text-lg md:text-xl text-foreground/80 font-medium leading-relaxed pb-12">
       <strong class="text-foreground">Desarrollador de Software</strong> especializado en crear interfaces modernas, claras y centradas en el usuario. Apasionado por construir experiencias digitales eficientes y modernas.
     </p>
 
-    <!-- Botones -->
-    <div class="mt-6 flex flex-wrap justify-center gap-4">
+    <div class="hero-buttons mt-6 flex flex-wrap justify-center gap-4">
       <a href="/cv.pdf" download>
         <Button variant="neutral" size="xl">Curriculum</Button>
       </a>
@@ -25,4 +23,5 @@ import { Button } from '@/components/ui/button'
       </a>
     </div>
   </div>
+  <HeroAnimation client:load />
 </section>

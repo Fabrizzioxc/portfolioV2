@@ -48,14 +48,24 @@ export default function Navbar() {
 
           {/* Desktop Buttons */}
           <div className="hidden md:flex space-x-4">
-            <a href="https://www.linkedin.com/in/fabrizziozambrano" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.linkedin.com/in/fabrizziozambrano"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ir al perfil de LinkedIn de Fabrizzio Zambrano"
+            >
               <Button variant="neutral">
-                <LinkedIn className="w-5 h-5" />
+                <LinkedIn className="w-5 h-5" aria-hidden="true" />
               </Button>
             </a>
-            <a href="https://github.com/Fabrizzioxc" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://github.com/Fabrizzioxc"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ir al perfil de GitHub de Fabrizzio Zambrano"
+            >
               <Button variant="neutral">
-                <GitHub className="w-5 h-5" />
+                <GitHub className="w-5 h-5" aria-hidden="true" />
               </Button>
             </a>
           </div>

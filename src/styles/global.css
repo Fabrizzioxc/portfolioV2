@@ -84,11 +84,12 @@
   }
 
   @font-face {
-    font-family: 'Recoleta';
-    src: url('/assets/fonts/Recoleta/Recoleta-Bold.ttf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-  }
+  font-family: 'Recoleta';
+  src: url('/assets/fonts/Recoleta-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
   
 }
 

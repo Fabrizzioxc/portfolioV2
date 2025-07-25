@@ -1,3 +1,4 @@
+//components/EmailCopy.tsx
 "use client"
 
 import { Button } from "@/components/ui/button"
@@ -18,7 +19,7 @@ export default function EmailCopy() {
     <>
       <Toaster />
       <div className="bg-secondary-background border-2 border-border p-8 rounded-md max-w-2xl mx-auto flex flex-col gap-4">
-        <label htmlFor="email" className="font-bold text-white text-lg">
+        <label htmlFor="email" className="font-bold text-border text-lg">
           Correo Electrónico:
         </label>
         <div className="flex flex-col md:flex-row items-stretch md:items-center gap-4">

@@ -77,7 +77,13 @@ export default function Navbar() {
 
       {/* Mobile Toggle */}
       <div className="md:hidden">
-        <button onClick={handleToggle}>
+        <button
+          onClick={handleToggle}
+          aria-label={isOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
+          className="focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-border"
+        >
           {isOpen ? <X size={32} strokeWidth={3} /> : <Menu size={32} strokeWidth={3} />}
         </button>
       </div>
@@ -94,6 +100,7 @@ export default function Navbar() {
         exit={{ translateX: "100%" }}
         transition={{ duration: 0.3, type: "tween", ease: "easeInOut" }}
         className="fixed top-0 right-0 h-full w-64 bg-[#000615] text-[#DDE3F0] border-l border-[#27324D] p-6 flex flex-col z-50"
+        id="mobile-menu"
       >
         <div className="flex justify-end mb-4">
           <button onClick={() => setIsOpen(false)} className="p-2">

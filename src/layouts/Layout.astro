@@ -14,11 +14,17 @@ const { title = 'Portfolio | Fabrizzio Zambrano'} = Astro.props
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+     <meta name="description" content="Portafolio de Fabrizzio Zambrano. Desarrollador de software especializado en tecnologías web modernas como Astro, React y Node.js." />
+  <link rel="canonical" href="https://tu-dominio.com/" />
+  <meta property="og:title" content="Fabrizzio Zambrano - Desarrollador de Software" />
+  <meta property="og:description" content="Portafolio con proyectos modernos, rápidos y optimizados." />
+  <meta property="og:type" content="website" />
+  <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
   <body class="bg-background text-foreground">
-    <Header client:load />
+    <Header client:idle />
     
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <slot />

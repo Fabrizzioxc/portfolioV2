@@ -88,7 +88,7 @@
   src: url('/assets/fonts/Recoleta/Recoleta-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
   
 }

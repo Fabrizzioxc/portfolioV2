@@ -7,17 +7,19 @@ import GitHub from "@/components/icons/GitHub";
 import LinkIcon from "@/components/icons/LinkIcon";
 ---
 
-<section id="proyectos" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto scroll-mt-16 justify-items-center">
+<section
+  id="proyectos"
+  class="py-16 px-6 sm:px-6 lg:px-8 max-w-6xl mx-auto scroll-mt-16 justify-items-center"
+>
   <!-- Título -->
   <h2 class="text-4xl sm:text-5xl lg:text-6xl font-heading text-center leading-tight mb-24">
     <span class="border-2 border-main px-3">Proyectos</span>
   </h2>
 
   <!-- Tarjetas -->
-  <div class="grid gap-12 sm:grid-cols-2">
+  <div class="grid gap-12 sm:grid-cols-2 justify-items-center">
     {projects.map(project => (
-      <article class="relative bg-background border border-border p-8 flex flex-col justify-between">
-        
+      <article class="relative bg-background border border-border p-6 sm:p-8 flex flex-col justify-between max-w-xs sm:max-w-full w-full mx-auto">
         <div class="space-y-6">
           <h3 class="text-3xl font-bold">{project.title}</h3>
 
@@ -33,7 +35,7 @@ import LinkIcon from "@/components/icons/LinkIcon";
           </p>
         </div>
 
-        <div class="flex gap-4 mt-8">
+        <div class="flex gap-4 mt-8 flex-wrap">
           {project.repo && (
             <a href={project.repo} target="_blank" rel="noopener noreferrer">
               <Button variant="neutral" size="lg" className="flex items-center gap-2">

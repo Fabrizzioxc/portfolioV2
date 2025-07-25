@@ -3,11 +3,28 @@ import { GitHub, LinkedIn } from "@/components/icons"
 import { Button } from '@/components/ui/button'
 ---
 
-<footer class="mt-24 px-6 py-10 text-sm text-muted-foreground">
+<footer class="px-6 py-10 text-sm text-muted-foreground">
   <div class="max-w-6xl mx-auto border-t border-[#27324D] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
     
-    <p class="text-center md:text-left">
-      © 2024 Fabrizzio Zambrano. Desarrollado con <strong>Astro</strong> y diseñado en <strong>Figma</strong>.
+    <p class="text-center md:text-left font-light">
+      © 2024 Fabrizzio Zambrano. Desarrollado con 
+      <a 
+        href="https://astro.build" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="font-bold hover:underline"
+      >
+        Astro
+      </a> 
+      y diseñado en 
+      <a 
+        href="https://www.figma.com" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="font-bold hover:underline"
+      >
+        Figma
+      </a>.
     </p>
     
     <div class="hidden md:flex space-x-4">

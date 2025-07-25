@@ -66,13 +66,14 @@
   
 @layer base {
 
-  @font-face {
-    font-family: 'Inter Variable';
-    font-display: block; /* Espera a cargar Inter antes de mostrar texto */
-    font-style: normal;
-    font-weight: 100 900;
-    src: local('Inter Variable'); /* usa la inyección del paquete npm */
-  }
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: block; /* Para evitar FOIT pero no mostrar fallback */
+  src: url('/assets/fonts/Inter/files/inter-latin-wght-normal.woff2') format('woff2');
+}
+
   
   body {
     @apply text-foreground font-base bg-background;

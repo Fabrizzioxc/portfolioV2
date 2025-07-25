@@ -48,7 +48,7 @@ export default function Navbar() {
 
           {/* Desktop Buttons */}
           <div className="hidden md:flex space-x-4">
-            <a href="https://www.linkedin.com/in/fabrizzio-zambrano-602678334/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/fabrizziozambrano" target="_blank" rel="noopener noreferrer">
               <Button variant="neutral">
                 <LinkedIn className="w-5 h-5" />
               </Button>

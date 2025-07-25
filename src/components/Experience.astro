@@ -22,8 +22,8 @@ import type { Experience } from "./ExperienceData"
         <div class="absolute w-4 h-4 bg-main border-2 border-border rounded-full -start-8 top-1.5"></div>
         <time class="text-sm text-muted-foreground font-light">{exp.date}</time>
         <h3 class="text-2xl sm:text-3xl mt-3 font-bold">{exp.title}</h3>
-        <p class="text-lg font-light text-muted-foreground mb-2">{exp.company}</p>
-        <p class="text-lg font-light text-muted-foreground leading-relaxed mb-6">{exp.description}</p>
+        <p class="text-lg font-normal text-muted-foreground mb-4">{exp.company}</p>
+        <p class="text-base md:text-lg font-light text-muted-foreground leading-relaxed mb-6">{exp.description}</p>
         <Button variant="neutral" size="lg">{exp.button}</Button>
       </li>
     ))}

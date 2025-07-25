@@ -24,7 +24,7 @@ export const projects: Project[] = [
     image: "/images/matrioska.png",
   },
   {
-    title: "Sitio Web Corporativo - JYJ S.A.C",
+    title: "Sitio Web Corporativo ",
     description:
       "Sitio web corporativo enfocado en velocidad de carga, SEO técnico y diseño responsive. Ofrece una experiencia de usuario clara y profesional, fortaleciendo la presencia digital de la empresa.",
     stack: [

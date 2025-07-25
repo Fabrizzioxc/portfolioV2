@@ -11,6 +11,9 @@ export default function HeroAnimation() {
 
       const tl = gsap.timeline();
 
+      // Mostramos el contenedor al iniciar
+      tl.set(".hero-container", { opacity: 1, visibility: "visible" });
+
       // 1. Animación del título
       const splitTitle = new SplitText(".h1hero", { type: "words" });
       tl.from(splitTitle.words, {
@@ -32,7 +35,7 @@ export default function HeroAnimation() {
           filter: "blur(10px)",
           ease: "power3.out",
         },
-        "<0.4" // Se lanza 0.4s después del título
+        "<0.4"
       );
 
       // 3. Botón "Contáctame" con un pequeño retraso
@@ -45,7 +48,7 @@ export default function HeroAnimation() {
           filter: "blur(10px)",
           ease: "power3.out",
         },
-        "<0.3" // Aparece 0.3s después del botón Curriculum
+        "<0.3"
       );
     }
   }, []);

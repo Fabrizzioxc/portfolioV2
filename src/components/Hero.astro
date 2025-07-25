@@ -4,7 +4,7 @@ import HeroAnimation from '@/components/HeroAnimation';
 ---
 
 <section class="pt-42 pb-24 relative w-full min-h-[80vh] flex items-center justify-center text-center px-4 sm:px-6 lg:px-8">
-  <div class="max-w-4xl mx-auto space-y-6">
+  <div class="max-w-4xl mx-auto space-y-6 hero-container opacity-0" style="visibility: hidden;">
     <h1 class="h1hero text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-foreground leading-tight font-heading" style="font-family: 'Recoleta'">
       <strong class="block text-3xl sm:text-4xl md:text-7xl text-foreground">Hola,</strong>
       Soy Fabrizzio<br />Zambrano
@@ -15,19 +15,19 @@ import HeroAnimation from '@/components/HeroAnimation';
     </p>
 
     <div class="hero-buttons mt-6 flex flex-wrap justify-center gap-4">
-  <a
-    href="/assets/curriculum/Fabrizzio-Zambrano-Curriculum-Desarrollo de Software.pdf"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Ver mi Curriculum en una nueva pestaña"
-  >
-    <Button variant="neutral" size="xl">Curriculum</Button>
-  </a>
-
-  <a href="#contacto">
-    <Button variant="neutral" size="xl">Contáctame</Button>
-  </a>
-</div>
+      <a
+        href="/assets/curriculum/Fabrizzio-Zambrano-Curriculum-Desarrollo de Software.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Ver mi Curriculum en una nueva pestaña"
+      >
+        <Button variant="neutral" size="xl">Curriculum</Button>
+      </a>
+      <a href="#contacto">
+        <Button variant="neutral" size="xl">Contáctame</Button>
+      </a>
+    </div>
   </div>
   <HeroAnimation client:load />
 </section>
+

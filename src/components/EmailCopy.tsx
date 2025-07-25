@@ -27,7 +27,7 @@ export default function EmailCopy() {
             type="text"
             value={email}
             readOnly
-            className="w-full px-4 py-3 border border-border rounded-md bg-background text-foreground text-base font-mono"
+            className="w-full px-4 py-3 border border-border rounded-md bg-background text-foreground text-base font-mono-dm"
           />
           <Button onClick={handleCopy} size="lg" className="shrink-0">
             Copiar

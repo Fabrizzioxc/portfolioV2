@@ -37,6 +37,7 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
           href="https://www.linkedin.com/in/fabrizzio-zambrano-602678334/"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Ir al perfil de LinkedIn de Fabrizzio Zambrano"
         >
           <Button variant="neutral">
             <LinkedIn className="w-5 h-5" />
@@ -46,6 +47,7 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
           href="https://github.com/Fabrizzioxc"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Ir al perfil de GitHub de Fabrizzio Zambrano"
         >
           <Button variant="neutral">
             <GitHub className="w-5 h-5" />

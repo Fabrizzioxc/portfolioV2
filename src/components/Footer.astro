@@ -28,25 +28,28 @@ import { Button } from '@/components/ui/button'
     </p>
     
     <div class="hidden md:flex space-x-4">
-      <a
-        href="www.linkedin.com/in/fabrizziozambrano"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Button variant="neutral">
-          <LinkedIn className="w-5 h-5" />
-        </Button>
-      </a>
-      <a
-        href="https://github.com/Fabrizzioxc"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Button variant="neutral">
-          <GitHub className="w-5 h-5" />
-        </Button>
-      </a>
+  <a
+    href="https://www.linkedin.com/in/fabrizziozambrano"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Ir al perfil de LinkedIn de Fabrizzio Zambrano"
+  >
+    <Button variant="neutral">
+      <LinkedIn className="w-5 h-5" aria-hidden="true" />
+    </Button>
+  </a>
+  <a
+    href="https://github.com/Fabrizzioxc"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Ir al perfil de GitHub de Fabrizzio Zambrano"
+  >
+    <Button variant="neutral">
+      <GitHub className="w-5 h-5" aria-hidden="true" />
+    </Button>
+  </a>
     </div>
+
 
   </div>
 </footer>

@@ -14,7 +14,7 @@ import * as Icons from "@/components/icons"
   <!-- Tarjetas -->
   <div class="grid gap-12 sm:grid-cols-2">
     {projects.map(project => (
-      <article class="relative bg-background border border-border p-8 shadow-[5px_5px_0px_0px_var(--border)] flex flex-col justify-between">
+      <article class="relative bg-background border border-border p-8 flex flex-col justify-between">
         
         <div class="space-y-6">
           <h3 class="text-2xl font-bold">{project.title}</h3>
@@ -26,23 +26,21 @@ import * as Icons from "@/components/icons"
             })}
           </div>
 
-          <p class="text-base font-normal text-muted-foreground leading-relaxed">
+          <p class="text-base font-normal text-muted-foreground leading-relaxed pb-4">
             {project.description}
           </p>
         </div>
 
         
         <div class="flex gap-4 mt-8">
-          {project.repo && (
+          
             <a href={project.repo} target="_blank" rel="noopener noreferrer">
-              <Button variant="neutral">Repositorio</Button>
+              <Button variant="neutral" size="lg">Repositorio</Button>
             </a>
-          )}
-          {project.preview && (
             <a href={project.preview} target="_blank" rel="noopener noreferrer">
-              <Button variant="neutral">Preview</Button>
+              <Button variant="neutral" size="lg">Preview</Button>
             </a>
-          )}
+          
         </div>
       </article>
     ))}

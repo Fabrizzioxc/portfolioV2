@@ -32,7 +32,8 @@ export const projects: Project[] = [
       { icon: "TailwindCSSIcon", name: "Tailwind CSS" },
       { icon: "PreactIcon", name: "Preact" },
     ],
-    preview: "https://jyj-servicios.vercel.app",
+    repo: "https://github.com/Fabrizzioxc/J-J",
+    preview: "https://jyj-two.vercel.app",
     image: "/images/jyj.png",
   },
 ]

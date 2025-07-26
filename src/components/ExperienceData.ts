@@ -4,6 +4,7 @@ export interface Experience {
   company: string;
   description: string;
   button: string;
+  detailed?: boolean; // <- nuevo
 }
 
 export const experiences: Experience[] = [
@@ -14,6 +15,7 @@ export const experiences: Experience[] = [
     description:
       "Desarrollé el sitio web corporativo de J&J Servicios Generales como desarrollador freelance, participando desde el diseño hasta la entrega final. Enfocado en mejorar la presencia digital de la empresa, implementé prácticas de optimización SEO y rendimiento, asegurando una navegación ágil y moderna.",
     button: "Ver más",
+    detailed: true, // <- solo ésta usa el DialogExperienceGSAP
   },
   {
     date: "Mayo 2024 - Diciembre 2024",
@@ -22,5 +24,6 @@ export const experiences: Experience[] = [
     description:
       "Desarrollé una aplicación web de inventario para optimizar la gestión operativa de Matrioska. El sistema mejoró el control interno, agilizó el flujo de trabajo y facilitó la organización de productos mediante filtros avanzados y herramientas de exportación. El enfoque en usabilidad y eficiencia permitió a la empresa centralizar sus procesos de manera más efectiva.",
     button: "Ver más",
+    detailed: false,
   },
-]; 
+];

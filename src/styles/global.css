@@ -101,21 +101,15 @@
   font-display: block;
 }
 
-/* Ocultar scrollbar en navegadores WebKit (Chrome, Edge, Safari) */
-body::-webkit-scrollbar {
-  display: none;
-}
 
-/* Ocultar scrollbar en Firefox */
-body {
+/* Ocultar scrollbars pero mantener el scroll funcional */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE y Edge */
   scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE y Edge Legacy */
 }
 
-html, body {
-  margin: 0;
-  height: 100%;
-  overflow-y: auto; /* ✅ Solo muestra scroll si es necesario */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 }
 

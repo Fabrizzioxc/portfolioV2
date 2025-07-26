@@ -1,0 +1,160 @@
+"use client";
+
+import * as React from "react";
+import { gsap } from "gsap";
+import Flip from "gsap/Flip";
+import { Button } from "@/components/ui/button";
+import { X, Maximize2 } from "lucide-react";
+
+// Secciones del diálogo
+import { DialogTitleSection } from "@/components/dialog/DialogTitleSection";
+import { DialogDetailsSection } from "@/components/dialog/DialogDetailsSection";
+import { DialogAchievementsSection } from "@/components/dialog/DialogAchievementsSection";
+import { DialogStackSection } from "@/components/dialog/DialogStackSection";
+
+gsap.registerPlugin(Flip);
+
+export function DialogExperienceGSAP({
+  triggerLabel = "Ver más",
+}: {
+  triggerLabel?: string;
+}) {
+  const dialogRef = React.useRef<HTMLDialogElement>(null);
+  const overlayRef = React.useRef<HTMLDivElement>(null);
+
+  const openDialog = () => {
+    const dialog = dialogRef.current;
+    const overlay = overlayRef.current;
+    if (!dialog || !overlay) return;
+  
+    // Resetear scroll interno
+    const content = dialog.querySelector(".dialog-content");
+    if (content) {
+      (content as HTMLElement).scrollTop = 0;
+    }
+  
+    // Bloquear scroll del body
+    document.body.style.overflow = "hidden";
+  
+    // Overlay blur + fade
+    gsap.set(overlay, { backdropFilter: "blur(0px)" });
+    gsap.to(overlay, {
+      opacity: 1,
+      backdropFilter: "blur(8px)",
+      pointerEvents: "auto",
+      duration: 0.35,
+      ease: "power2.out",
+    });
+  
+    const state = Flip.getState(dialog);
+    dialog.showModal();
+    gsap.set(dialog, { opacity: 0, scale: 0.95 });
+  
+    Flip.from(state, {
+      duration: 0.45,
+      ease: "power2.out",
+      absolute: true,
+      onComplete: () => {
+        gsap.to(dialog, { opacity: 1, scale: 1, duration: 0.25 });
+      },
+    });
+  };
+  
+
+  const closeDialog = () => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+  
+    // Resetear scroll interno al cerrar
+    const content = dialog.querySelector(".dialog-content");
+    if (content) {
+      (content as HTMLElement).scrollTop = 0;
+    }
+  
+    dialog.close(); // dispara evento 'close'
+  };
+  
+
+  // Cerrar y hacer scroll a #contacto
+  const handleContactClick = () => {
+    closeDialog();
+    setTimeout(() => {
+      const contactSection = document.querySelector("#contacto");
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 300);
+  };
+
+  React.useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+
+    const handleClose = () => {
+      // **Restaurar scroll del body**
+      document.body.style.overflow = "";
+
+      gsap.to(overlayRef.current, {
+        opacity: 0,
+        backdropFilter: "blur(0px)",
+        pointerEvents: "none",
+        duration: 0.35,
+        ease: "power2.in",
+      });
+    };
+
+    dialog.addEventListener("close", handleClose);
+    return () => dialog.removeEventListener("close", handleClose);
+  }, []);
+
+  return (
+    <>
+      {/* Overlay */}
+      <div
+        ref={overlayRef}
+        className="fixed inset-0 bg-black/50 opacity-0 pointer-events-none z-[90]"
+      />
+
+      {/* Trigger */}
+      <Button onClick={openDialog} variant="neutral" size="lg">
+        {triggerLabel}
+      </Button>
+
+      {/* Dialog */}
+      <dialog
+        ref={dialogRef}
+        className="fixed left-1/2 top-1/2 w-[95%] max-w-4xl max-h-[90vh] -translate-x-1/2 -translate-y-1/2 border-2 border-border bg-background shadow-shadow opacity-0 z-[100] overflow-hidden text-foreground"
+      >
+        {/* Header */}
+        <div className="sticky top-0 bg-background px-4 py-3 flex justify-end">
+          <Button
+            variant="neutral"
+            size="icon"
+            onClick={closeDialog}
+            aria-label="Cerrar"
+          >
+            <X className="w-4 h-4" aria-hidden="true" />
+          </Button>
+        </div>
+
+        {/* Contenido */}
+        <div className="dialog-content overflow-y-auto max-h-[calc(90vh-56px)] px-6 py-10 space-y-12 scrollbar-hide">
+          <DialogTitleSection />
+          <DialogDetailsSection />
+          <DialogAchievementsSection />
+          <DialogStackSection />
+
+          {/* CTA */}
+          <section className="text-center space-y-4 pt-4 pb-12">
+            <h3 className="text-2xl md:text-4xl font-extrabold pb-5">
+              ¿Ves una oportunidad para colaborar?
+            </h3>
+            <Button variant="neutral" size="xl" onClick={handleContactClick}>
+              Contáctame
+            </Button>
+          </section>
+        </div>
+      </dialog>
+    </>
+  );
+}

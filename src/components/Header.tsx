@@ -33,7 +33,7 @@ export default function Navbar() {
       <nav className="fixed top-0 left-0 z-50 w-full bg-[#000615]/70 backdrop-blur-md text-[#DDE3F0]">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 border-b border-[#27324D]">
           {/* Logo */}
-          <a href="/#" className="flex items-center font-bold text-2xl transition-colors">
+          <a href="/" className="flex items-center font-bold text-2xl transition-colors">
             <DeveloperIcon className="w-6 h-6 mr-2" />
             <span className="mr-2">Fabrizzio</span>
           </a>

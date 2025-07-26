@@ -74,12 +74,36 @@ export default function DialogExperienceGSAP({
   const closeDialog = () => {
     const dialog = dialogRef.current;
     if (!dialog) return;
-
+  
+    // Animación elegante de salida
+    gsap.to(dialog, {
+      opacity: 0,
+      y: 40, // Desliza hacia abajo
+      filter: "blur(10px)",
+      duration: 0.4,
+      ease: "power2.inOut",
+      onComplete: () => {
+        gsap.set(dialog, { y: 0, filter: "blur(0px)" });
+        dialog.close(); // cerrar modal después de animar
+      },
+    });
+  
+    // Fade out del overlay
+    gsap.to(overlayRef.current, {
+      opacity: 0,
+      backdropFilter: "blur(0px)",
+      pointerEvents: "none",
+      duration: 0.35,
+      ease: "power2.in",
+    });
+  
+    // Reset scroll interno
     const content = dialog.querySelector(".dialog-content");
-    if (content) (content as HTMLElement).scrollTop = 0;
-
-    dialog.close();
+    if (content) {
+      (content as HTMLElement).scrollTop = 0;
+    }
   };
+  
 
   const handleContactClick = () => {
     closeDialog();

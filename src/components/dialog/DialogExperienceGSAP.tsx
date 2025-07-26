@@ -1,42 +1,53 @@
+// src/components/dialog/DialogExperienceGSAP.tsx
 "use client";
 
 import * as React from "react";
 import { gsap } from "gsap";
 import Flip from "gsap/Flip";
 import { Button } from "@/components/ui/button";
-import { X, Maximize2 } from "lucide-react";
+import { X } from "lucide-react";
 
-// Secciones del diálogo
-import { DialogTitleSection } from "@/components/dialog/DialogTitleSection";
-import { DialogDetailsSection } from "@/components/dialog/DialogDetailsSection";
-import { DialogAchievementsSection } from "@/components/dialog/DialogAchievementsSection";
-import { DialogStackSection } from "@/components/dialog/DialogStackSection";
+import { dialogExperiences } from "./ExperienceDialogData";
+
+import { DialogTitleSection } from "./DialogTitleSection";
+import { DialogDetailsSection } from "./DialogDetailsSection";
+import { DialogAchievementsSection } from "./DialogAchievementsSection";
+import { DialogStackSection } from "./DialogStackSection";
 
 gsap.registerPlugin(Flip);
 
-export function DialogExperienceGSAP({
-  triggerLabel = "Ver más",
-}: {
+interface DialogExperienceGSAPProps {
   triggerLabel?: string;
-}) {
+  experienceId: string;
+}
+
+export default function DialogExperienceGSAP({
+  triggerLabel = "Ver más",
+  experienceId,
+}: DialogExperienceGSAPProps) {
   const dialogRef = React.useRef<HTMLDialogElement>(null);
   const overlayRef = React.useRef<HTMLDivElement>(null);
+
+  const data = dialogExperiences[experienceId];
+  if (!data) {
+    // Si el id no existe, evita romper la UI
+    return (
+      <Button variant="neutral" size="lg" disabled>
+        (Sin data) {triggerLabel}
+      </Button>
+    );
+  }
 
   const openDialog = () => {
     const dialog = dialogRef.current;
     const overlay = overlayRef.current;
     if (!dialog || !overlay) return;
-  
-    // Resetear scroll interno
+
     const content = dialog.querySelector(".dialog-content");
-    if (content) {
-      (content as HTMLElement).scrollTop = 0;
-    }
-  
-    // Bloquear scroll del body
+    if (content) (content as HTMLElement).scrollTop = 0;
+
     document.body.style.overflow = "hidden";
-  
-    // Overlay blur + fade
+
     gsap.set(overlay, { backdropFilter: "blur(0px)" });
     gsap.to(overlay, {
       opacity: 1,
@@ -45,11 +56,11 @@ export function DialogExperienceGSAP({
       duration: 0.35,
       ease: "power2.out",
     });
-  
+
     const state = Flip.getState(dialog);
     dialog.showModal();
     gsap.set(dialog, { opacity: 0, scale: 0.95 });
-  
+
     Flip.from(state, {
       duration: 0.45,
       ease: "power2.out",
@@ -59,23 +70,17 @@ export function DialogExperienceGSAP({
       },
     });
   };
-  
 
   const closeDialog = () => {
     const dialog = dialogRef.current;
     if (!dialog) return;
-  
-    // Resetear scroll interno al cerrar
-    const content = dialog.querySelector(".dialog-content");
-    if (content) {
-      (content as HTMLElement).scrollTop = 0;
-    }
-  
-    dialog.close(); // dispara evento 'close'
-  };
-  
 
-  // Cerrar y hacer scroll a #contacto
+    const content = dialog.querySelector(".dialog-content");
+    if (content) (content as HTMLElement).scrollTop = 0;
+
+    dialog.close();
+  };
+
   const handleContactClick = () => {
     closeDialog();
     setTimeout(() => {
@@ -91,9 +96,7 @@ export function DialogExperienceGSAP({
     if (!dialog) return;
 
     const handleClose = () => {
-      // **Restaurar scroll del body**
       document.body.style.overflow = "";
-
       gsap.to(overlayRef.current, {
         opacity: 0,
         backdropFilter: "blur(0px)",
@@ -128,10 +131,10 @@ export function DialogExperienceGSAP({
         {/* Header */}
         <div className="sticky top-0 bg-background px-4 py-3 flex justify-end">
           <Button
-            variant="neutral"
-            size="icon"
-            onClick={closeDialog}
-            aria-label="Cerrar"
+          variant="neutral"
+          size="icon"
+          onClick={closeDialog}
+          aria-label="Cerrar"
           >
             <X className="w-4 h-4" aria-hidden="true" />
           </Button>
@@ -139,10 +142,10 @@ export function DialogExperienceGSAP({
 
         {/* Contenido */}
         <div className="dialog-content overflow-y-auto max-h-[calc(90vh-56px)] px-6 py-10 space-y-12 scrollbar-hide">
-          <DialogTitleSection />
-          <DialogDetailsSection />
-          <DialogAchievementsSection />
-          <DialogStackSection />
+          <DialogTitleSection title={data.title} cards={data.cards} />
+          <DialogDetailsSection details={data.details} />
+          <DialogAchievementsSection achievements={data.achievements} />
+          <DialogStackSection technologies={data.technologies} />
 
           {/* CTA */}
           <section className="text-center space-y-4 pt-4 pb-12">

@@ -1,26 +1,17 @@
-import AstroIcon from "@/components/icons/AstroIcon";
-import TailwindCSSIcon from "@/components/icons/TailwindCSSIcon";
-import PreactIcon from "@/components/icons/PreactIcon";
+// src/components/dialog/DialogStackSection.tsx
+import type { ElementType } from "react";
+import { Badge } from "@/components/ui/Badge";
 
-interface DialogBadgeProps {
-  icon: React.ElementType;
+export interface TechItem {
+  icon: ElementType;
   label: string;
 }
 
-const DialogBadge = ({ icon: Icon, label }: DialogBadgeProps) => {
-  return (
-    <span
-      role="img"
-      aria-label={label}
-      className="inline-flex items-center gap-3 border-2 border-white px-4 py-2 text-lg font-semibold rounded-md"
-    >
-      <Icon className="w-6 h-6" aria-hidden="true" />
-      <span aria-hidden="true">{label}</span>
-    </span>
-  );
-};
+interface DialogStackSectionProps {
+  technologies: TechItem[];
+}
 
-export function DialogStackSection() {
+export function DialogStackSection({ technologies }: DialogStackSectionProps) {
   return (
     <section className="space-y-4">
       <div className="flex gap-2 items-center justify-center pb-8">
@@ -29,11 +20,17 @@ export function DialogStackSection() {
         </span>
         <span className="text-3xl font-bold">Usadas</span>
       </div>
-      <div className="flex flex-wrap gap-3 justify-center">
-        <DialogBadge icon={AstroIcon} label="Astro" />
-        <DialogBadge icon={TailwindCSSIcon} label="Tailwind CSS" />
-        <DialogBadge icon={PreactIcon} label="Preact" />
-      </div>
+      <div className="flex flex-wrap gap-4 justify-center">
+  {technologies.map((t, i) => (
+    <Badge
+      key={i}
+      icon={t.icon}
+      label={t.label}
+      className="px-5 py-2 gap-3 text-lg md:text-xl rounded-lg [&>svg]:w-6 [&>svg]:h-6"
+    />
+  ))}
+</div>
+
     </section>
   );
 }

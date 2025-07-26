@@ -1,17 +1,34 @@
+// src/components/dialog/DialogTitleSection.tsx
+import type { ElementType } from "react";
 import { CardInfoDialog } from "@/components/dialog/CardInfoDialog";
-import { Calendar, Briefcase, User } from "lucide-react";
 
-export function DialogTitleSection() {
+export interface TitleCard {
+  icon: ElementType;
+  label: string;
+  value: string;
+}
+
+interface DialogTitleSectionProps {
+  title: string;
+  cards: TitleCard[];
+}
+
+export function DialogTitleSection({ title, cards }: DialogTitleSectionProps) {
   return (
     <>
       <h2 className="text-3xl md:text-5xl font-extrabold text-center pb-12 pt-4">
-        J&amp;J Servicios Generales S.A.C
+        {title}
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 justify-center pb-8">
-        <CardInfoDialog icon={Calendar} label="Fecha" value="Julio 2025" />
-        <CardInfoDialog icon={Briefcase} label="Empleo" value="Freelance" />
-        <CardInfoDialog icon={User} label="Rol" value="Desarrollador web" />
+        {cards.map((c, i) => (
+          <CardInfoDialog
+            key={i}
+            icon={c.icon}
+            label={c.label}
+            value={c.value}
+          />
+        ))}
       </div>
     </>
   );

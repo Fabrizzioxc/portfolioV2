@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button"
 import { experiences } from "./ExperienceData"
 import type { Experience } from "./ExperienceData"
-import { DialogExperienceGSAP } from "@/components/dialog/DialogExperienceGSAP";
+import DialogExperienceGSAP from "@/components/dialog/DialogExperienceGSAP";
 ---
 
 <section id="experience" class="py-16 px-6 max-w-3xl mx-auto scroll-mt-16">
@@ -26,11 +26,13 @@ import { DialogExperienceGSAP } from "@/components/dialog/DialogExperienceGSAP";
           {exp.description}
         </p>
 
-        {exp.detailed ? (
-          <DialogExperienceGSAP client:idle triggerLabel={exp.button} />
-        ) : (
-          <Button variant="neutral" size="lg">{exp.button}</Button>
-        )}
+        {
+          exp.detailed ? (
+            <DialogExperienceGSAP client:idle triggerLabel={exp.button} experienceId={exp.id} />
+          ) : (
+            <Button variant="neutral" size="lg">{exp.button}</Button>
+          )
+        }
       </li>
     ))}
   </ol>

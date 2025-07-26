@@ -42,7 +42,7 @@ export default function HeroAnimation() {
       tl.from(
         ".hero-buttons a:last-child",
         {
-          duration: 3,
+          duration: 2.5,
           y: 10,
           opacity: 0,
           filter: "blur(10px)",

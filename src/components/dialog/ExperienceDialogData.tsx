@@ -46,10 +46,6 @@ export interface DialogExperience {
   technologies: DialogTech[];
 }
 
-/**
- * Las experiencias, indexadas por id. (jyj, matrioska, etc.)
- * Agrega nuevas simplemente copiando la estructura.
- */
 export const dialogExperiences: Record<string, DialogExperience> = {
   jyj: {
     id: "jyj",

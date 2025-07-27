@@ -17,7 +17,7 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "Inventario Web - Matrioska",
+    title: "Inventario Web",
     description:
       "Aplicación para la gestión interna de inventarios con funcionalidades CRUD, filtros avanzados y exportación de datos. Presenta una interfaz moderna, fluida y optimizada para dispositivos móviles.",
     stack: [

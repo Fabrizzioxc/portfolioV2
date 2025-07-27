@@ -1,4 +1,4 @@
- // src/components/dialog/DialogExperienceGSAP.tsx
+// src/components/dialog/DialogExperienceGSAP.tsx
 "use client";
 
 import * as React from "react";
@@ -38,72 +38,65 @@ export default function DialogExperienceGSAP({
     );
   }
 
-  const openDialog = () => {
-    const dialog = dialogRef.current;
-    const overlay = overlayRef.current;
-    if (!dialog || !overlay) return;
+const openDialog = () => {
+  const dialog = dialogRef.current;
+  const overlay = overlayRef.current;
+  if (!dialog || !overlay) return;
 
-    const content = dialog.querySelector(".dialog-content");
-    if (content) (content as HTMLElement).scrollTop = 0;
+  const content = dialog.querySelector(".dialog-content");
+  if (content) (content as HTMLElement).scrollTop = 0;
 
-    document.body.style.overflow = "hidden";
+  document.body.style.overflow = "hidden";
 
-    gsap.set(overlay, { backdropFilter: "blur(0px)" });
-    gsap.to(overlay, {
-      opacity: 1,
-      backdropFilter: "blur(8px)",
-      pointerEvents: "auto",
-      duration: 0.35,
-      ease: "power2.out",
-    });
+  // Reinicia cualquier transformación previa
+  gsap.set(dialog, { clearProps: "transform", opacity: 1 });
 
-    const state = Flip.getState(dialog);
-    dialog.showModal();
-    gsap.set(dialog, { opacity: 0, scale: 0.95 });
+  gsap.set(overlay, { backdropFilter: "blur(0px)" });
+  gsap.to(overlay, {
+    opacity: 1,
+    backdropFilter: "blur(8px)",
+    pointerEvents: "auto",
+    duration: 0.35,
+    ease: "power2.out",
+  });
 
-    Flip.from(state, {
-      duration: 0.45,
-      ease: "power2.out",
-      absolute: true,
-      onComplete: () => {
-        gsap.to(dialog, { opacity: 1, scale: 1, duration: 0.25 });
-      },
-    });
-  };
+  dialog.showModal();
+  gsap.fromTo(
+    dialog,
+    { opacity: 0, y: -50, filter: "blur(10px)" },
+    { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.45, ease: "power2.out" }
+  );
+};
 
-  const closeDialog = () => {
-    const dialog = dialogRef.current;
-    if (!dialog) return;
-  
-    // Animación elegante de salida
-    gsap.to(dialog, {
-      opacity: 0,
-      y: 40, // Desliza hacia abajo
-      filter: "blur(10px)",
-      duration: 0.4,
-      ease: "power2.inOut",
-      onComplete: () => {
-        gsap.set(dialog, { y: 0, filter: "blur(0px)" });
-        dialog.close(); // cerrar modal después de animar
-      },
-    });
-  
-    // Fade out del overlay
-    gsap.to(overlayRef.current, {
-      opacity: 0,
-      backdropFilter: "blur(0px)",
-      pointerEvents: "none",
-      duration: 0.35,
-      ease: "power2.in",
-    });
-  
-    // Reset scroll interno
-    const content = dialog.querySelector(".dialog-content");
-    if (content) {
-      (content as HTMLElement).scrollTop = 0;
-    }
-  };
-  
+const closeDialog = () => {
+  const dialog = dialogRef.current;
+  if (!dialog) return;
+
+  gsap.to(dialog, {
+    opacity: 0,
+    y: 50, // hacia abajo
+    filter: "blur(10px)",
+    duration: 0.4,
+    ease: "power2.inOut",
+    onComplete: () => {
+      gsap.set(dialog, { clearProps: "transform", opacity: 1 });
+      dialog.close();
+    },
+  });
+
+  gsap.to(overlayRef.current, {
+    opacity: 0,
+    backdropFilter: "blur(0px)",
+    pointerEvents: "none",
+    duration: 0.35,
+    ease: "power2.in",
+  });
+
+  const content = dialog.querySelector(".dialog-content");
+  if (content) (content as HTMLElement).scrollTop = 0;
+};
+
+
 
   const handleContactClick = () => {
     closeDialog();
@@ -184,4 +177,4 @@ export default function DialogExperienceGSAP({
       </dialog>
     </>
   );
-}  
+}

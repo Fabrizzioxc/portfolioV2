@@ -142,9 +142,10 @@ const closeDialog = () => {
 
       {/* Dialog */}
       <dialog
-        ref={dialogRef}
-        className="fixed left-1/2 top-1/2 w-[95%] max-w-4xl max-h-[90vh] -translate-x-1/2 -translate-y-1/2 border-2 border-border bg-background shadow-shadow opacity-0 z-[100] overflow-hidden text-foreground"
-      >
+  ref={dialogRef}
+  className="fixed inset-0 m-auto w-[95%] max-w-4xl max-h-[90vh] border-2 border-border bg-background shadow-shadow opacity-0 z-[100] overflow-hidden text-foreground"
+>
+
         {/* Header */}
         <div className="sticky top-0 bg-background px-4 py-3 flex justify-end">
           <Button

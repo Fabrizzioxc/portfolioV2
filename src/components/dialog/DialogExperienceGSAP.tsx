@@ -43,9 +43,6 @@ const openDialog = () => {
   const overlay = overlayRef.current;
   if (!dialog || !overlay) return;
 
-  const content = dialog.querySelector(".dialog-content");
-  if (content) (content as HTMLElement).scrollTop = 0;
-
   document.body.style.overflow = "hidden";
 
   // Reinicia cualquier transformación previa
@@ -79,6 +76,8 @@ const closeDialog = () => {
     duration: 0.4,
     ease: "power2.inOut",
     onComplete: () => {
+      const content = dialog.querySelector(".dialog-content");
+      if (content) (content as HTMLElement).scrollTop = 0;
       gsap.set(dialog, { clearProps: "transform", opacity: 1 });
       dialog.close();
     },
@@ -92,8 +91,6 @@ const closeDialog = () => {
     ease: "power2.in",
   });
 
-  const content = dialog.querySelector(".dialog-content");
-  if (content) (content as HTMLElement).scrollTop = 0;
 };
 
 

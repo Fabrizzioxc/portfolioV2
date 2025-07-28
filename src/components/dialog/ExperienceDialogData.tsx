@@ -53,7 +53,7 @@ export const dialogExperiences: Record<string, DialogExperience> = {
     cards: [
       { icon: Calendar, label: "Fecha", value: "Julio 2025" },
       { icon: Briefcase, label: "Empleo", value: "Freelance" },
-      { icon: User, label: "Rol", value: "Desarrollador web" },
+      { icon: User, label: "Rol", value: "Desarrollador Web" },
     ],
     details: (
       <p className="text-base font-normal px-12 md:text-lg leading-relaxed text-foreground/90 pb-8">

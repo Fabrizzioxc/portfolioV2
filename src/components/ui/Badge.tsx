@@ -13,7 +13,7 @@
         role="img"
         aria-label={label}
         className={cn(
-          "inline-flex items-center gap-2 border border-white px-3 py-1 text-sm font-medium rounded-md",
+          "inline-flex items-center gap-2 border border-border/85 px-3 py-1 text-sm font-medium rounded-md",
           className
         )}
       >

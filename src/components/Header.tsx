@@ -52,9 +52,8 @@ export default function Navbar() {
               href="https://www.linkedin.com/in/fabrizziozambrano"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Ir al perfil de LinkedIn de Fabrizzio Zambrano"
             >
-              <Button variant="neutral">
+              <Button variant="neutral" aria-label="Ir al perfil de LinkedIn de Fabrizzio Zambrano">
                 <LinkedIn className="w-5 h-5" aria-hidden="true" />
               </Button>
             </a>
@@ -62,9 +61,8 @@ export default function Navbar() {
               href="https://github.com/Fabrizzioxc"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Ir al perfil de GitHub de Fabrizzio Zambrano"
             >
-              <Button variant="neutral">
+              <Button variant="neutral" aria-label="Ir al perfil de GitHub de Fabrizzio Zambrano">
                 <GitHub className="w-5 h-5" aria-hidden="true" />
               </Button>
             </a>

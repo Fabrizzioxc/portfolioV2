@@ -14,7 +14,7 @@ export function DialogAchievementsSection({
   achievements,
 }: DialogAchievementsSectionProps) {
   return (
-    <section className="space-y-6">
+    <section className="space-y-6 px-12">
       <div className="flex gap-2 items-center justify-center pb-4">
         <span className="inline-block border-2 border-border px-4 py-1 text-3xl font-bold">
           Logros

@@ -56,13 +56,13 @@ export const dialogExperiences: Record<string, DialogExperience> = {
       { icon: User, label: "Rol", value: "Desarrollador web" },
     ],
     details: (
-      <p className="text-base font-normal md:text-lg leading-relaxed text-foreground/90 pb-8">
+      <p className="text-base font-normal px-12 md:text-lg leading-relaxed text-foreground/90 pb-8">
         Durante el mes de julio de 2025, trabajé como desarrollador web
         freelance para <strong className="font-bold">J&amp;J Servicios Generales S.A.C</strong>. 
         La necesidad clave del cliente era establecer una sólida presencia digital 
         para visibilizar y promover sus servicios especializados en drywall, pintura 
         y electricidad. Mi responsabilidad abarcó el ciclo completo del proyecto, 
-        desde la concepción del <strong className="font-bold">diseño en Figma</strong> 
+        desde la concepción del <strong className="font-bold">diseño en Figma </strong> 
         hasta el <strong className="font-bold">Desarrollo Frontend</strong> final de la plataforma.
       </p>
     ),
@@ -111,10 +111,10 @@ export const dialogExperiences: Record<string, DialogExperience> = {
     cards: [
       { icon: Calendar, label: "Fecha", value: "Mayo 2024 – Dic 2024" },
       { icon: Briefcase, label: "Empleo", value: "Prácticas" },
-      { icon: User, label: "Rol", value: "Desarrollador de software" },
+      { icon: User, label: "Rol", value: "Desarrollador de Software" },
     ],
     details: (
-      <p className="text-base font-normal md:text-lg leading-relaxed text-foreground/90 pb-8">
+      <p className="text-base font-normal px-12 md:text-lg leading-relaxed text-foreground/90 pb-8">
         Desarrollé una aplicación web de inventario para optimizar la gestión
         operativa de <strong className="font-bold">Matrioska S.A.C</strong>. 
         El sistema mejoró el control interno, agilizó el flujo de trabajo y 

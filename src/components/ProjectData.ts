@@ -17,7 +17,7 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "Inventario Web",
+    title: "Inventario web",
     description:
       "Aplicación para la gestión interna de inventarios con funcionalidades CRUD, filtros avanzados y exportación de datos. Presenta una interfaz moderna, fluida y optimizada para dispositivos móviles.",
     stack: [
@@ -30,7 +30,7 @@ export const projects: Project[] = [
     image: "/images/matrioska.png",
   },
   {
-    title: "Sitio Web Corporativo",
+    title: "Sitio web corporativo",
     description:
       "Sitio web corporativo enfocado en velocidad de carga, SEO técnico y diseño responsive. Ofrece una experiencia de usuario clara y profesional, fortaleciendo la presencia digital de la empresa.",
     stack: [

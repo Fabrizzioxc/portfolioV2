@@ -14,7 +14,7 @@ export function DialogAchievementsSection({
   achievements,
 }: DialogAchievementsSectionProps) {
   return (
-    <section className="space-y-6 px-12">
+    <section className="space-y-6 ">
       <div className="flex gap-2 items-center justify-center pb-4">
         <span className="inline-block border-2 border-border px-4 py-1 text-3xl font-bold">
           Logros
@@ -24,7 +24,7 @@ export function DialogAchievementsSection({
 
       <ol className="space-y-6">
         {achievements.map((item) => (
-          <li key={item.id} className="flex items-start gap-4">
+          <li key={item.id} className="flex items-start gap-4 md:px-12">
             <div className="w-12 h-12 flex items-center justify-center border-2 border-border font-bold text-2xl flex-shrink-0">
               {item.id}
             </div>

@@ -56,7 +56,7 @@ export const dialogExperiences: Record<string, DialogExperience> = {
       { icon: User, label: "Rol", value: "Desarrollador Web" },
     ],
     details: (
-      <p className="text-base font-normal px-12 md:text-lg leading-relaxed text-foreground/90 pb-8">
+      <p className="text-base font-normal md:text-lg leading-relaxed text-foreground/90 pb-8 md:px-12">
         Durante el mes de julio de 2025, trabajé como desarrollador web
         freelance para <strong className="font-bold">J&amp;J Servicios Generales S.A.C</strong>. 
         La necesidad clave del cliente era establecer una sólida presencia digital 
@@ -114,7 +114,7 @@ export const dialogExperiences: Record<string, DialogExperience> = {
       { icon: User, label: "Rol", value: "Desarrollador de Software" },
     ],
     details: (
-      <p className="text-base font-normal px-12 md:text-lg leading-relaxed text-foreground/90 pb-8">
+      <p className="text-base font-normal md:text-lg leading-relaxed text-foreground/90 pb-8 md:px-12">
         Desarrollé una aplicación web de inventario para optimizar la gestión
         operativa de <strong className="font-bold">Matrioska S.A.C</strong>. 
         El sistema mejoró el control interno, agilizó el flujo de trabajo y 
